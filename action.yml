@@ -1,0 +1,36 @@
+name: 'SSH Connect'
+author: 'matieg'
+description: 'Connect your server by ssh'
+ 
+inputs:
+  ssh_key:
+    description: 'Insert ssh key server'
+    default: "test"
+  host:
+    description: 'Insert host server'
+    required: true
+  username:
+    description: 'Insert user server'
+    required: true
+  passphrase:
+    description: 'Insert passphrase server'
+    default: ''
+  script:
+    description: 'Insert script'
+    required: true
+ 
+outputs:
+  ret:
+    description: 'Server connected'
+ 
+# Aquí van los valores específicos para configurar Docker 
+# o JavaScript, se explicarán más adelante.
+runs:
+  using: 'docker'
+  image: Dockerfile
+  args:
+    - ${{ inputs.token }}
+ 
+branding:
+  icon: 'download-cloud'
+  color: 'blue'
